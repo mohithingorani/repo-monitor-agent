@@ -25,7 +25,7 @@ def get_file_content(owner: str, repo: str, file_path: str) -> str:
     :return: Description
     :rtype: str
     """
-    url = f"{GITHUB_API}/repos/{owner}/{repo}/contents/{file_path}"
+    url = f"{GITHUB_API}/repos/{owner}/{repo}/contents/{file_path}/?ref=main"
     response = requests.get(url, headers=HEADERS)
     response.raise_for_status()
     file_info = response.json()

@@ -2,7 +2,7 @@ from models.state import MessageState
 from models.outputs import ImportantFilesOutput
 from langchain.messages import SystemMessage,HumanMessage,ToolMessage
 
-from llm.ollama import llm
+from llm.groq import llm
 
 
 def get_important_files(state: MessageState)->MessageState:

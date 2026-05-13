@@ -1,6 +1,4 @@
-
 import os
-
 
 def show_image(agent):
     png_bytes = agent.get_graph(xray=True).draw_mermaid_png()

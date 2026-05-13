@@ -1,7 +1,7 @@
 from models.state import MessageState
 from langchain.messages import SystemMessage,HumanMessage
 
-from llm.ollama import llm
+from llm.groq import llm
 
 def summarization_node(state:MessageState):
     observations = state.observations

@@ -1,8 +1,10 @@
 langchain
 langchain-ollama
+langchain-groq
 dotenv
 requests
 fastapi
 uvicorn
 pydantic
 pydantic-settings
+starlette

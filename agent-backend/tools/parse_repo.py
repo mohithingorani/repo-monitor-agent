@@ -1,7 +1,7 @@
 import re
 def parse_repo(state:dict):
-    text="https://github.com/mohithingorani/RAG-CHAIN-FOR-AI-ARTICLE"
     text = state.messages[0].content
+    # text= "https://github.com/mohithingorani/Windy-Cliff-Q-Learning"
     match = re.search(r"https?://github\.com/[^\s]+", text)
     if not match:
         return None

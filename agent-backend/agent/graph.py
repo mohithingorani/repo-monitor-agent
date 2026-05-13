@@ -9,7 +9,7 @@ from models.state import  MessageState
 from tools.parse_repo import parse_repo
 from tools.github import  get_file_content
 from langgraph.graph import StateGraph,START,END
-from llm.ollama import llm
+from llm.groq import llm
 from dotenv import load_dotenv
 from agent.nodes.git_metadata import get_metadata
 from utils.image_show import show_image
@@ -47,7 +47,7 @@ agent_builder.add_edge("summarizer",END)
 
 checkpointer = InMemorySaver()
 
-graph = agent_builder.compile(checkpointer=checkpointer)
+graph = agent_builder.compile()
 # show_image(graph)
 
 

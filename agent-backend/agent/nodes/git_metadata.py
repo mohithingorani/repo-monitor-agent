@@ -1,5 +1,5 @@
 from models.state import MessageState,RepoMetaData
-from llm.ollama import llm
+from llm.groq import llm
 from langchain.messages import SystemMessage,HumanMessage
 
 
