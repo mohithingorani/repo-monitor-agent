@@ -94,13 +94,13 @@ export function SeverityOverview({ observations }: SeverityOverviewProps) {
 
       <div className="grid md:grid-cols-[1.2fr_1fr] gap-3">
         <div className="bg-white border border-zinc-200 rounded-xl p-4 shadow-sm">
-          <p className="text-[10px] text-zinc-400 uppercase tracking-wider mb-3">Severity Distribution</p>
+          <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-3">Severity Distribution</p>
           <div className="h-28 relative">
             <Doughnut data={doughnutData} options={chartOptions} />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-center">
                 <p className="text-xl font-bold text-zinc-900">{total}</p>
-                <p className="text-[10px] text-zinc-400">total</p>
+                <p className="text-[10px] text-zinc-500">total</p>
               </div>
             </div>
           </div>
@@ -108,14 +108,14 @@ export function SeverityOverview({ observations }: SeverityOverviewProps) {
             {(["Critical", "High", "Medium", "Low"] as const).map((sev) => (
               <div key={sev} className="flex items-center gap-1">
                 <div className={`w-2 h-2 rounded-full ${config[sev].dot}`} />
-                <span className="text-[10px] text-zinc-400">{sev}</span>
+                <span className="text-[10px] text-zinc-500">{sev}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div className="bg-white border border-zinc-200 rounded-xl p-4 shadow-sm">
-          <p className="text-[10px] text-zinc-400 uppercase tracking-wider mb-3">Issues by Severity</p>
+          <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-3">Issues by Severity</p>
           <div className="h-28">
             <Bar data={barData} options={barOptions} />
           </div>

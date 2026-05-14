@@ -35,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect fill='%236366f1' width='24' height='24' rx='6'/><path d='M13 10V3L4 14h7v7l9-11h-7z' fill='white'/></svg>" />
       </head>
-      <body className="antialiased" style={{ fontFamily: "var(--font-geist), system-ui, sans-serif" }}>
+      <body className="antialiased overflow-x-hidden" style={{ fontFamily: "var(--font-geist), system-ui, sans-serif" }}>
         {children}
       </body>
     </html>

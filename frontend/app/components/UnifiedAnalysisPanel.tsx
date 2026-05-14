@@ -85,13 +85,13 @@ export function UnifiedAnalysisPanel({
   return (
     <section className="bg-white border border-zinc-200 rounded-2xl shadow-sm">
       <div className="p-3 md:px-6 md:py-5">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
           <div>
-            <p className="text-[11px] uppercase tracking-wider text-zinc-400">Repository</p>
-            <h2 className="text-lg font-semibold text-zinc-950 mt-1 font-mono">{displayRepo}</h2>
-            <p className="text-xs text-zinc-500 mt-2">{stageLabel}</p>
+            <p className="text-[11px] uppercase tracking-wider text-zinc-500">Repository</p>
+            <h2 className="text-lg font-semibold text-zinc-950 mt-1 font-mono break-all">{displayRepo}</h2>
+            <p className="text-xs text-zinc-500 mt-1">{stageLabel}</p>
           </div>
-          <div className={`inline-flex items-center gap-2 text-[11px] px-2.5 py-1 rounded-full border ${statusTone(appState)}`}>
+          <div className={`self-start sm:self-auto inline-flex items-center gap-2 text-[11px] px-2.5 py-1 rounded-full border ${statusTone(appState)}`}>
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             <span className="font-medium">{statusLabel(appState)}</span>
           </div>
@@ -145,11 +145,11 @@ export function UnifiedAnalysisPanel({
 
       <div className="px-6 py-4">
         <div className="flex items-center justify-between">
-          <p className="text-[11px] uppercase tracking-wider text-zinc-400">Live log</p>
-          <span className="text-[11px] text-zinc-400">{logs.length > 0 ? "streaming" : "idle"}</span>
+          <p className="text-[11px] uppercase tracking-wider text-zinc-500">Live log</p>
+          <span className="text-[11px] text-zinc-500">{logs.length > 0 ? "streaming" : "idle"}</span>
         </div>
         <div className="mt-3 space-y-1.5 font-mono text-[11px] text-zinc-500">
-          {logs.length === 0 && <p className="text-zinc-400">Waiting for a repository…</p>}
+          {logs.length === 0 && <p className="text-zinc-500">Waiting for a repository…</p>}
           {logs.map((entry) => (
             <p key={entry.id} className="truncate">{entry.text}</p>
           ))}

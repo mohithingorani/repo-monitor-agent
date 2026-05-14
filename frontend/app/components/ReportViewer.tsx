@@ -32,7 +32,7 @@ export function ReportViewer({ content, repoName }: ReportViewerProps) {
     <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
       <div className="px-5 py-3 border-b border-zinc-100 flex items-center justify-between bg-white">
         <div className="flex items-center gap-2">
-          <span className="text-[10px] text-zinc-400 uppercase tracking-wider">Analysis Report</span>
+          <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Analysis Report</span>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="sm" onClick={handleCopy}>

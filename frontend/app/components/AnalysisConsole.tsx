@@ -19,8 +19,8 @@ export function AnalysisConsole({ entries }: { entries: ConsoleEntry[] }) {
   return (
     <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
       <div className="px-3 py-2 border-b border-zinc-100 flex items-center gap-2 bg-zinc-50">
-        <Terminal className="w-3.5 h-3.5 text-zinc-400" />
-        <span className="text-[10px] text-zinc-400 font-medium uppercase tracking-wider">Analysis Console</span>
+        <Terminal className="w-3.5 h-3.5 text-zinc-500" />
+        <span className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Analysis Console</span>
       </div>
       <div className="p-3 h-44 overflow-y-auto space-y-1 font-mono text-[11px] bg-zinc-50">
         <AnimatePresence>

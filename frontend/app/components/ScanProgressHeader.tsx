@@ -12,7 +12,7 @@ export function ScanProgressHeader({ repoName, progress }: ScanProgressHeaderPro
     <div className="bg-white border border-zinc-200 rounded-xl p-4 shadow-sm">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[10px] text-zinc-400 uppercase tracking-wider">Active scan</p>
+          <p className="text-[10px] text-zinc-500 uppercase tracking-wider">Active scan</p>
           <h3 className="text-sm font-semibold text-zinc-900">{repoName}</h3>
         </div>
         <div className="flex items-center gap-2 text-xs text-zinc-500">

@@ -15,7 +15,7 @@ export function LiveObservationList({ observations }: { observations: Observatio
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <span className="text-[10px] text-zinc-400 uppercase tracking-wider">Live Issues ({observations.length})</span>
+        <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Live Issues ({observations.length})</span>
       </div>
       <div className="space-y-1.5 max-h-60 overflow-y-auto">
         {observations.map((obs, i) => {
@@ -31,7 +31,7 @@ export function LiveObservationList({ observations }: { observations: Observatio
               <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${cfg.dot}`} />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-[10px] font-mono text-zinc-400 truncate">{obs.file}</span>
+                  <span className="text-[10px] font-mono text-zinc-500 truncate">{obs.file}</span>
                   <Badge variant={obs.severity.toLowerCase() as any}>{cfg.label}</Badge>
                 </div>
                 <p className={`text-xs leading-relaxed ${cfg.text}`}>
@@ -58,10 +58,10 @@ export function IssueCard({ obs, index }: { obs: ObservationState; index: number
       <div className={`px-4 py-2.5 border-b border-zinc-100 flex items-center gap-3 ${cfg.bg}`}>
         <div className={`w-2 h-2 rounded-full ${cfg.dot}`} />
         <Badge variant={obs.severity.toLowerCase() as any}>{cfg.label}</Badge>
-        <span className="text-xs font-mono text-zinc-400 flex-1 truncate">{obs.file}</span>
+        <span className="text-xs font-mono text-zinc-500 flex-1 truncate">{obs.file}</span>
       </div>
-      <div className="p-4">
-        <p className={`text-sm leading-relaxed ${cfg.text}`}>{obs.issue}</p>
+      <div className="p-4 overflow-hidden">
+        <p className={`text-sm leading-relaxed ${cfg.text} break-words`}>{obs.issue}</p>
       </div>
     </motion.div>
   );

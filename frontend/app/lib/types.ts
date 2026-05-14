@@ -40,3 +40,56 @@ export interface StreamChunk {
   analyze?: MessageState;
   summarizer?: MessageState;
 }
+
+export interface ActivityEntry {
+  id: string;
+  text: string;
+  type: "info" | "success" | "warning" | "error";
+}
+
+export type ErrorType = "network" | "api" | "validation" | "timeout" | "parse" | "rate_limit";
+
+export interface AppError {
+  type: ErrorType;
+  message: string;
+  recoverable: boolean;
+  retryAfter?: number;
+}
+
+export type ValidationStatus = "idle" | "valid" | "invalid" | "checking";
+
+export interface ValidationResult {
+  status: ValidationStatus;
+  error?: string;
+  suggestion?: string;
+  owner?: string;
+  repo?: string;
+}
+
+export interface AnalysisHistoryItem {
+  id: string;
+  repoName: string;
+  owner: string;
+  repo: string;
+  timestamp: number;
+  observationCount: number;
+  fileCount: number;
+  techStack: string[];
+  maturity: string | null;
+}
+
+export interface AnalysisState {
+  appState: "idle" | "analyzing" | "done" | "error";
+  prompt: string;
+  error: AppError | null;
+  streamStatus: Record<string, boolean>;
+  activityLog: { id: string; text: string; type: "info" | "success" | "warning" | "error" }[];
+  observations: ObservationState[];
+  metadata: RepoMetaData | null;
+  filesFound: number;
+  filesAnalyzed: number;
+  skippedFiles: string[];
+  response: string;
+  repoName: string;
+  retryCount: number;
+}

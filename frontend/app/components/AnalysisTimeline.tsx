@@ -14,8 +14,8 @@ export function AnalysisTimeline() {
   return (
     <div className="bg-white border border-zinc-200 rounded-xl p-4 shadow-sm">
       <div className="flex items-center justify-between mb-3">
-        <p className="text-[10px] text-zinc-400 uppercase tracking-wider">Timeline</p>
-        <span className="text-[10px] text-zinc-400 font-mono">ETA 28s</span>
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider">Timeline</p>
+        <span className="text-[10px] text-zinc-500 font-mono">ETA 28s</span>
       </div>
       <div className="space-y-2">
         {timeline.map((step, i) => {
@@ -45,7 +45,7 @@ export function AnalysisTimeline() {
                   {step.label}
                 </p>
               </div>
-              <span className="text-[10px] text-zinc-400 font-mono">{step.time}</span>
+              <span className="text-[10px] text-zinc-500 font-mono">{step.time}</span>
             </motion.div>
           );
         })}

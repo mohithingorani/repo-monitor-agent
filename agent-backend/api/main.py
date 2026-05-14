@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from api.chat import router as chat_router
 from api.core.logging import setup_logging
@@ -11,7 +12,18 @@ app = FastAPI(
 origins = [
     "http://127.0.0.1:3000", 
     "http://localhost:3000",
+    "http://localhost:3001",
+    "http://frontend:3000",
+    "http://github-agent-frontend:3000",
+    "http://127.0.0.1:8001",
+    "http://localhost:8001",
+    "http://backend:8001",
+    "http://github-agent-backend:8001",
 ]
+
+# Allow all origins in Docker for development
+if os.getenv("DOCKER_CONTAINER") == "true":
+    origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -30,3 +42,11 @@ app.include_router(chat_router)
 @app.get("/health")
 def health():
     return {"status":"ok"}
+
+@app.get("/debug/env")
+def debug_env():
+    return {
+        "github_token_set": bool(os.getenv("GITHUB_TOKEN")),
+        "groq_api_key_set": bool(os.getenv("GROQ_API_KEY")),
+        "docker_container": os.getenv("DOCKER_CONTAINER"),
+    }

@@ -31,27 +31,27 @@ export function MetadataPanel({ metadata, filesFound, filesAnalyzed, skippedFile
       <div className="grid grid-cols-2 gap-2">
         <div className="bg-white border border-zinc-200 rounded-lg p-3 shadow-sm">
           <div className="flex items-center gap-1.5 mb-1">
-            <FileCode className="w-3 h-3 text-zinc-400" />
-            <span className="text-[10px] text-zinc-400 uppercase tracking-wider">Scanned</span>
+            <FileCode className="w-3 h-3 text-zinc-500" />
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Scanned</span>
           </div>
           <p className="text-lg font-bold text-zinc-900">{filesFound}</p>
-          <p className="text-[10px] text-zinc-400">files</p>
+          <p className="text-[10px] text-zinc-500">files</p>
         </div>
         <div className="bg-white border border-zinc-200 rounded-lg p-3 shadow-sm">
           <div className="flex items-center gap-1.5 mb-1">
-            <Layers className="w-3 h-3 text-zinc-400" />
-            <span className="text-[10px] text-zinc-400 uppercase tracking-wider">Analyzed</span>
+            <Layers className="w-3 h-3 text-zinc-500" />
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Analyzed</span>
           </div>
           <p className="text-lg font-bold text-zinc-900">{filesAnalyzed}</p>
-          <p className="text-[10px] text-zinc-400">files</p>
+          <p className="text-[10px] text-zinc-500">files</p>
         </div>
       </div>
 
       {metadata && (
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <GitBranch className="w-3 h-3 text-zinc-400" />
-            <span className="text-[10px] text-zinc-400 uppercase tracking-wider">Tech Stack</span>
+            <GitBranch className="w-3 h-3 text-zinc-500" />
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Tech Stack</span>
           </div>
           <div className="flex flex-wrap gap-1.5">
             {metadata.tech_stack.map((tech) => (

@@ -12,7 +12,7 @@ export function Navbar() {
     >
       <div className="relative">
         <div className="absolute inset-0 surface-glass border-b border-zinc-200" />
-        <div className="relative max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between overflow-hidden">
           <a href="/" className="flex items-center gap-2 group">
             <div className="w-6 h-6 rounded-md bg-zinc-900 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
               <Command className="w-3.5 h-3.5 text-white" />
