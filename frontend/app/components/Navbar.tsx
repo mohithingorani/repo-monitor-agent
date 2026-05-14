@@ -18,7 +18,7 @@ export function Navbar() {
               <Command className="w-3.5 h-3.5 text-white" />
             </div>
             <span className="font-semibold text-zinc-900 text-[13px] tracking-tight">
-              GitHub Agent
+              GitScope
             </span>
             <span className="ml-2 hidden md:inline-flex items-center gap-1 text-[10px] uppercase tracking-wider text-zinc-400">
               <ShieldCheck className="w-3 h-3" />
@@ -53,7 +53,7 @@ export function Navbar() {
               <span className="font-mono">v0.9.2</span>
             </div>
             <a
-              href="https://github.com/mohithingorani/github-agent"
+              href="https://github.com/mohithingorani/repo-monitor-agent"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-900 transition-colors"

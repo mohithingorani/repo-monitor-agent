@@ -122,7 +122,7 @@ export function HistoryPanel({ onSelect }: HistoryPanelProps) {
             </div>
 
             <a
-              href="https://github.com/mohithingorani/github-agent"
+              href="https://github.com/mohithingorani/gitscope"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 border-t border-zinc-100 text-xs text-zinc-500 hover:text-zinc-700 transition-colors"

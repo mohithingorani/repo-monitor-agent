@@ -1,9 +1,9 @@
 services:
   backend:
     build:
-      context: ./agent-backend
+      context: ./backend
       dockerfile: Dockerfile
-    container_name: github-agent-backend
+    container_name: gitscope-backend
     ports:
       - "8001:8001"
     environment:
@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile
       args:
         - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
-    container_name: github-agent-frontend
+    container_name: gitscope-frontend
     ports:
       - "3002:3000"
     extra_hosts:
@@ -45,4 +45,4 @@ services:
 
 networks:
   default:
-    name: github-agent-network
+    name: gitscope-network

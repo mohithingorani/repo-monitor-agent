@@ -1,4 +1,4 @@
-# GitHub Agent
+# GitScope
 
 AI-powered repository analysis tool that automatically detects issues, bugs, security vulnerabilities, and code quality problems in any public GitHub repository.
 
@@ -66,7 +66,7 @@ User Input: "https://github.com/owner/repo"
 ### Directory Structure
 
 ```
-├── agent-backend/
+├── backend/
 │   ├── agent/
 │   │   ├── graph.py              # LangGraph state machine definition
 │   │   └── nodes/
@@ -119,7 +119,7 @@ User Input: "https://github.com/owner/repo"
 ### Backend
 
 ```bash
-cd agent-backend
+cd backend
 
 # Create virtual environment (Python 3.11-3.13 required)
 python -m venv .venv
@@ -138,7 +138,7 @@ npm install
 
 ## Configuration
 
-Create `.env` in `agent-backend/`:
+Create `.env` in `backend/`:
 
 ```bash
 GITHUB_TOKEN=ghp_your_token_here
@@ -158,7 +158,7 @@ NEXT_PUBLIC_BACKEND_URL=http://localhost:8001
 #### Start Backend
 
 ```bash
-cd agent-backend
+cd backend
 uvicorn api.main:app --reload --port 8001
 ```
 
@@ -192,7 +192,7 @@ GITHUB_TOKEN=your_github_token_here
 GROQ_API_KEY=your_groq_api_key_here
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_API_KEY=your_langchain_key_here
-LANGCHAIN_PROJECT=github-agent
+LANGCHAIN_PROJECT=gitscope
 
 # Frontend
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8001
@@ -218,7 +218,7 @@ docker compose down
 
 | Service  | URL                | Port |
 |----------|-------------------|------|
-| Frontend | http://localhost  | 3000 |
+| Frontend | http://localhost  | 3002 |
 | Backend  | http://localhost  | 8001 |
 | Health   | http://localhost:8001/health | 8001 |
 
@@ -340,7 +340,7 @@ class ObservationState(BaseModel):
 
 ### Changing the LLM Model
 
-Edit `agent-backend/llm/groq.py`:
+Edit `backend/llm/groq.py`:
 
 ```python
 llm = ChatGroq(
@@ -353,8 +353,8 @@ llm = ChatGroq(
 
 ### Adding New Agent Nodes
 
-1. Create node function in `agent-backend/agent/nodes/`
-2. Register in `agent-backend/agent/graph.py`:
+1. Create node function in `backend/agent/nodes/`
+2. Register in `backend/agent/graph.py`:
    ```python
    agent_builder.add_node("node_name", your_node_function)
    agent_builder.add_edge("previous_node", "node_name")
@@ -363,4 +363,4 @@ llm = ChatGroq(
 
 ### Extending Issue Detection
 
-Modify the system prompt in `agent-backend/agent/nodes/batch_analyze.py` (`_BATCH_ANALYSIS_SYSTEM_PROMPT`) to add new issue categories, adjust severity criteria, or change detection rules.
+Modify the system prompt in `backend/agent/nodes/batch_analyze.py` (`_BATCH_ANALYSIS_SYSTEM_PROMPT`) to add new issue categories, adjust severity criteria, or change detection rules.

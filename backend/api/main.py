@@ -14,11 +14,11 @@ origins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "http://frontend:3000",
-    "http://github-agent-frontend:3000",
+    "http://gitscope-frontend:3000",
     "http://127.0.0.1:8001",
     "http://localhost:8001",
     "http://backend:8001",
-    "http://github-agent-backend:8001",
+    "http://gitscope-backend:8001",
 ]
 
 # Allow all origins in Docker for development

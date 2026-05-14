@@ -15,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GitHub Agent — AI Repository Analysis",
+  title: "GitScope — AI Repository Analysis",
   description: "Detect bugs, vulnerabilities, architectural issues, and code quality problems automatically in any public GitHub repository.",
   keywords: ["github", "code analysis", "ai", "bug detection", "security", "code review"],
   openGraph: {
-    title: "GitHub Agent — AI Repository Analysis",
+    title: "GitScope — AI Repository Analysis",
     description: "Detect bugs, vulnerabilities, and code quality problems automatically.",
     type: "website",
   },

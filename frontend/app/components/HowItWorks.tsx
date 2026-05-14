@@ -136,7 +136,7 @@ export function Footer() {
                 <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor" />
               </svg>
             </div>
-            <span className="text-sm font-medium text-zinc-600">GitHub Agent</span>
+            <span className="text-sm font-medium text-zinc-600">GitScope</span>
             <span className="text-xs text-zinc-400">by Mohit Hingorani</span>
           </div>
           
@@ -177,7 +177,7 @@ export function Footer() {
         
         <div className="mt-8 pt-6 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-zinc-400">Built with LangGraph · Next.js</p>
-          <p className="text-xs text-zinc-400">© 2026 GitHub Agent. All rights reserved.</p>
+          <p className="text-xs text-zinc-400">© 2026 GitScope. All rights reserved.</p>
         </div>
       </div>
     </footer>

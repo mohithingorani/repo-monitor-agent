@@ -207,7 +207,7 @@ export function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
-const HISTORY_KEY = "github-agent-history";
+const HISTORY_KEY = "gitscope-history";
 const MAX_HISTORY_ITEMS = 10;
 
 export function getAnalysisHistory(): { id: string; repoName: string; owner: string; repo: string; timestamp: number; observationCount: number; fileCount: number; techStack: string[]; maturity: string | null }[] {
