@@ -13,7 +13,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-8 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-0">
+      <div className="max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
           <div>
             <p className="text-[11px] uppercase tracking-wider text-zinc-500">Workflow</p>
