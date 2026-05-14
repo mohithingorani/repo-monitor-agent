@@ -148,19 +148,21 @@ GROQ_API_KEY=gsk_your_key_here
 Create `.env.local` in `frontend`:
 
 ```bash
-NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8001
 ```
 
 ## Running the Project
 
-### Start Backend
+### Option 1: Local Development
+
+#### Start Backend
 
 ```bash
 cd agent-backend
-uvicorn api.main:app --reload --port 8000
+uvicorn api.main:app --reload --port 8001
 ```
 
-### Start Frontend
+#### Start Frontend
 
 ```bash
 cd frontend
@@ -168,6 +170,64 @@ npm run dev
 ```
 
 Access the UI at http://localhost:3000
+
+---
+
+### Option 2: Docker (Recommended)
+
+The project includes Docker support for easy deployment.
+
+#### Prerequisites
+
+- [Docker](https://www.docker.com/get-started) installed
+- [Docker Compose](https://docs.docker.com/compose/install/) installed
+
+#### Configuration
+
+Create a `.env` file in the project root with your API keys:
+
+```bash
+# Backend API Keys
+GITHUB_TOKEN=your_github_token_here
+GROQ_API_KEY=your_groq_api_key_here
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=your_langchain_key_here
+LANGCHAIN_PROJECT=github-agent
+
+# Frontend
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8001
+```
+
+#### Build and Run
+
+```bash
+# Build and start all services
+docker compose up --build
+
+# Or run in detached mode
+docker compose up -d --build
+
+# View logs
+docker compose logs -f
+
+# Stop services
+docker compose down
+```
+
+#### Services
+
+| Service  | URL                | Port |
+|----------|-------------------|------|
+| Frontend | http://localhost  | 3000 |
+| Backend  | http://localhost  | 8001 |
+| Health   | http://localhost:8001/health | 8001 |
+
+#### Notes
+
+- The backend runs on port **8001** (not 8000) in Docker
+- Frontend automatically connects to backend via `NEXT_PUBLIC_BACKEND_URL`
+- Health checks ensure backend is ready before frontend starts
+- Services restart automatically unless stopped
 
 ## API Reference
 
@@ -177,7 +237,7 @@ Analyzes a GitHub repository and returns a full issue summary.
 
 **Request:**
 ```bash
-curl -X POST http://localhost:8000/chat/ \
+curl -X POST http://localhost:8001/chat/ \
   -H "Content-Type: application/json" \
   -d '{"prompt": "https://github.com/facebook/react"}'
 ```
@@ -196,7 +256,7 @@ Streams incremental state updates per node as newline-delimited JSON (ndjson). E
 
 **Request:**
 ```bash
-curl -N -X POST http://localhost:8000/chat/stream \
+curl -N -X POST http://localhost:8001/chat/stream \
   -H "Content-Type: application/json" \
   -d '{"prompt": "https://github.com/facebook/react"}'
 ```
@@ -212,7 +272,7 @@ Retrieve the current checkpointed state for a given thread (requires thread_id f
 Health check endpoint.
 
 ```bash
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 ```
 
 ## Agent Nodes Explained
